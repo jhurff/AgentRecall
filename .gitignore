@@ -1,0 +1,48 @@
+# ── Reports (generated output — don't commit eval results) ────────────────────
+reports/
+
+# ── Environment / secrets ──────────────────────────────────────────────────────
+.env
+.env.*
+*.env
+run-*.sh          # run scripts often contain hardcoded tokens/IPs
+
+# ── Python ─────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+.eggs/
+wheels/
+pip-wheel-metadata/
+*.whl
+
+# ── Virtual environments ───────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.conda/
+
+# ── macOS ──────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ── IDEs ───────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Logs ───────────────────────────────────────────────────────────────────────
+*.log
+logs/
