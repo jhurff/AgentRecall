@@ -280,7 +280,7 @@ if __name__ == "__main__":
 
     if args.output:
         pathlib.Path(args.output).parent.mkdir(parents=True, exist_ok=True)
-    pathlib.Path(args.output).write_text(report)
+        pathlib.Path(args.output).write_text(report)
         print(f"📄  Report saved to {args.output}")
         if args.json:
             json_path = args.output.replace(".md", ".json")
