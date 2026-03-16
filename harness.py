@@ -13,6 +13,7 @@ Usage:
 
 import argparse
 import datetime
+import datetime as dt
 import importlib
 import importlib.util
 import json
@@ -140,7 +141,7 @@ def run_eval(agent_fn, session_id: str | None = None, delay: float = 0.5) -> dic
         by_category[cat]["passed"] += int(r["correct"])
 
     return {
-        "timestamp":   datetime.datetime.utcnow().isoformat() + "Z",
+        "timestamp":   datetime.datetime.now(datetime.UTC).isoformat(),
         "session_id":  session_id,
         "total":       total,
         "passed":      passed,
@@ -278,7 +279,8 @@ if __name__ == "__main__":
     report = generate_report(data, agent_label=args.agent)
 
     if args.output:
-        pathlib.Path(args.output).write_text(report)
+        pathlib.Path(args.output).parent.mkdir(parents=True, exist_ok=True)
+    pathlib.Path(args.output).write_text(report)
         print(f"📄  Report saved to {args.output}")
         if args.json:
             json_path = args.output.replace(".md", ".json")
