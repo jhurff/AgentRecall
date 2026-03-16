@@ -29,6 +29,7 @@ from openclaw_sdk import OpenClawClient
 
 AGENT_ID     = os.environ.get("OPENCLAW_AGENT_ID", "main")
 SESSION_NAME = os.environ.get("OPENCLAW_SESSION_NAME", "agentrecall-eval")
+TIMEOUT      = int(os.environ.get("OPENCLAW_TIMEOUT", "60"))  # seconds
 
 
 def _build_client_config() -> dict:
@@ -45,7 +46,7 @@ async def _chat_async(message: str, session_name: str) -> str:
     client = await OpenClawClient.connect(**config_kwargs)
     try:
         agent = client.get_agent(AGENT_ID, session_name=session_name)
-        result = await agent.execute(message)
+        result = await asyncio.wait_for(agent.execute(message), timeout=TIMEOUT)
         return result.content
     finally:
         await client.close()
