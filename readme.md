@@ -166,6 +166,10 @@ python harness.py --agent my_agent
 
 OpenClaw is a self-hosted personal AI agent gateway — it runs locally on your machine and connects to AI agents via WhatsApp, Telegram, and other channels. AgentRecall talks to it over its local WebSocket gateway.
 
+### Important: AgentRecall will change core OpenClaw files
+
+When you run AgentRecall, the facts that you have specified within the `facts.py` file will be shared with OpenClaw.  These facts could be added to or change information within core files like IDENTITY.md, SOUL.md, etc.
+
 ### How it works
 
 The OpenClaw adapter uses the `openclaw-sdk` WebSocket client. The SDK requires a **device identity** (a cryptographic keypair registered with the gateway) that only exists on machines that have run `openclaw login`. This means the adapter must run **on the OpenClaw machine itself** — remote connections will fail the handshake.

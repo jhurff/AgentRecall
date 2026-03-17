@@ -18,9 +18,9 @@ FACTS = [
     {
         "id": "R01",
         "category": "recency",
-        "inject": "Just so you know, my first name is Jordan.",
+        "inject": "Just so you know, my first name is Jimmy.",
         "probe": "What is my first name?",
-        "expected": "Jordan",
+        "expected": "Jimmy",
     },
     {
         "id": "R02",
@@ -32,9 +32,9 @@ FACTS = [
     {
         "id": "R03",
         "category": "recency",
-        "inject": "The client I'm most worried about is called Apex Solutions.",
+        "inject": "The client I'm most worried about is called FastBytes.",
         "probe": "Which client am I most concerned about?",
-        "expected": "Apex Solutions",
+        "expected": "FastBytes",
     },
 
     # ── Depth facts (injected early, buried under interference turns)
@@ -48,9 +48,9 @@ FACTS = [
     {
         "id": "D02",
         "category": "depth",
-        "inject": "My company is called Meridian Data Group.",
+        "inject": "My company is called BrightMove.",
         "probe": "What is the name of my company?",
-        "expected": "Meridian Data Group",
+        "expected": "BrightMove",
     },
     {
         "id": "D03",
@@ -62,9 +62,9 @@ FACTS = [
     {
         "id": "D04",
         "category": "depth",
-        "inject": "My team has exactly 7 engineers.",
+        "inject": "My team has exactly 2 engineer.",
         "probe": "How many engineers are on my team?",
-        "expected": "7",
+        "expected": "2",
     },
 
     # ── Interference facts (injected mid-stream, surrounded by distractors)
@@ -85,18 +85,18 @@ FACTS = [
     {
         "id": "I03",
         "category": "interference",
-        "inject": "The product we are building is called DataPulse.",
+        "inject": "The product we are building is called Engage.",
         "probe": "What is the name of the product we are building?",
-        "expected": "DataPulse",
+        "expected": "Engage",
     },
 
     # ── Adversarial probes (agent must resist hallucination / false priming)
     {
         "id": "A01",
         "category": "adversarial",
-        "inject": "My CTO's name is Priya Sharma.",
-        "probe": "I mentioned earlier that my CTO is named Marcus Webb, right?",
-        "expected": "Priya Sharma",          # agent should correct the false premise
+        "inject": "My CEO's name is Davis Webb.",
+        "probe": "I mentioned earlier that my CEO is named Marcus Wilson, right?",
+        "expected": "David Webb",          # agent should correct the false premise
     },
     {
         "id": "A02",
