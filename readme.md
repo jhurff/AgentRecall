@@ -39,14 +39,19 @@ AgentRecall/
 ```bash
 pip install openai   # or whatever SDK your agent uses
 ```
+### 2. Get your facts straight
 
-### 2. Set your API key
+In the `facts.py` file, setup the fundmantal truths that you want to test recall for.  The file contained within has my facts.
+
+Note: When running evaluations, the facts you define can be written into your agent's memory.
+
+### 3. Set your API key
 
 ```bash
 export OPENAI_API_KEY=sk-...
 ```
 
-### 3. Run the eval
+### 4. Run the eval
 
 ```bash
 # Print report to terminal
@@ -59,7 +64,7 @@ python harness.py --agent openai --output reports/run-001.md
 python harness.py --agent openai --output reports/run-001.md --json
 ```
 
-### 4. Read your score
+### 5. Read your score
 
 The report prints an overall recall percentage and breaks it down by category:
 
