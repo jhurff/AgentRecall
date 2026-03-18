@@ -187,7 +187,7 @@ On the **OpenClaw machine**:
 
 ```bash
 # Clone AgentRecall
-git clone https://github.com/your-org/AgentRecall
+git clone https://github.com/jhurff/AgentRecall
 cd AgentRecall
 pip install openclaw-sdk
 

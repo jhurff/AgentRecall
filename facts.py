@@ -94,7 +94,7 @@ FACTS = [
     {
         "id": "A01",
         "category": "adversarial",
-        "inject": "My CEO's name is Davis Webb.",
+        "inject": "My CEO's name is David Webb.",
         "probe": "I mentioned earlier that my CEO is named Marcus Wilson, right?",
         "expected": "David Webb",          # agent should correct the false premise
     },
